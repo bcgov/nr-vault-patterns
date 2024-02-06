@@ -60,6 +60,5 @@ if __name__ == "__main__":
 
     if secret_json:
         print(secret_json)
-        print("Success")
     else:
         print("Failed to retrieve secret")
