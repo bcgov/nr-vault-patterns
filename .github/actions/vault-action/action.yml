@@ -1,0 +1,8 @@
+name: 'Vault Pattern for NR DAP'
+description: 'Vault patterns intended for use within the NR Data Analytics Platform (DAP)'
+runs:
+   using: 'docker'
+   image: 'Dockerfile'
+branding:
+   icon: 'shield'
+   color: 'blue'
