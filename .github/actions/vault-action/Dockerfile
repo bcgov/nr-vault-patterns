@@ -18,7 +18,9 @@ RUN pip3 install -r requirements.txt
 
 RUN pwd
 
-# CMD ["python3", "vault-main.py"]
+RUN ls
+
+# CMD ["python3", "./vault/vault-main.py"]
 
 
 
