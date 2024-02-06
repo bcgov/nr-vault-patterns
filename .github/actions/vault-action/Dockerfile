@@ -16,11 +16,7 @@ COPY requirements.txt requirements.txt
 
 RUN pip3 install -r requirements.txt
 
-RUN pwd
-
-RUN ls
-
-# CMD ["python3", "./vault/vault-main.py"]
+CMD ["python3", "./vault/vault-main.py"]
 
 
 
