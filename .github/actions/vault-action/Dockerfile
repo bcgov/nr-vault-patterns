@@ -4,10 +4,6 @@ ENV VAULT_URL='https://vault-iit.apps.silver.devops.gov.bc.ca'
 ENV BROKER_URL='https://nr-broker.apps.silver.devops.gov.bc.ca'
 ENV HTTP_PROXY='http://test-forwardproxy.nrs.bcgov:23128'
 
-RUN mkdir /github/workspace/
-
-WORKDIR /github/workspace/
-
 COPY intention.json intention.json
 
 ADD *.py .
