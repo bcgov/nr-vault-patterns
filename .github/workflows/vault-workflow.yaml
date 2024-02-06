@@ -11,9 +11,6 @@ jobs:
     name: Import Vault Secrets
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
-      - name: List Contents
-        run: ls -la /github/workspace/
       - name: NR Vault Pattern 
         id: nr-vault-patterns
         uses: ./.github/actions/vault-action  # bcgov/nr-vault-patterns@main
