@@ -4,11 +4,9 @@ ENV VAULT_URL='https://vault-iit.apps.silver.devops.gov.bc.ca'
 ENV BROKER_URL='https://nr-broker.apps.silver.devops.gov.bc.ca'
 ENV HTTP_PROXY='http://test-forwardproxy.nrs.bcgov:23128'
 
-RUN cd usr
+RUN mkdir /github/workspace/
 
-RUN mkdir vault
-
-WORKDIR /vault
+WORKDIR /github/workspace/
 
 COPY intention.json intention.json
 
@@ -18,7 +16,7 @@ COPY requirements.txt requirements.txt
 
 RUN pip3 install -r requirements.txt
 
-# CMD ["python3", "vault-main.py"]
+CMD ["python3", "vault-main.py"]
 
 
 
