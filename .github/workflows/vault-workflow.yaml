@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: NR Vault Pattern 
         id: nr-vault-patterns
-        uses: ./.github/actions/vault-action  # bcgov/nr-vault-patterns@main
+        uses: bcgov/nr-vault-patterns@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BROKER_JWT: ${{ secrets.BROKER_JWT }}
