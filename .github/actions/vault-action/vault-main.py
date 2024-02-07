@@ -5,7 +5,7 @@ import json
 def main(broker_url, broker_jwt, vault_url, vault_env, secret_name):
     try:
         # Load intention JSON from file
-        with open('intention.json', 'r') as file:
+        with open('/usr/bin/intention.json', 'r') as file:
             intention = json.load(file)
         
         # Post intention JSON
