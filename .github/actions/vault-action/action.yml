@@ -2,7 +2,7 @@ name: 'Vault Pattern for NR DAP'
 description: 'Vault patterns intended for use within the NR Data Analytics Platform (DAP)'
 runs:
    using: 'docker'
-   image: 'ghcr.io/bcgov/nr-vault-patterns:main'
+   image: 'Dockerfile'
 branding:
    icon: 'shield'
    color: 'blue'
