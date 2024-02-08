@@ -41,6 +41,8 @@ def main(broker_url, broker_jwt, vault_url, vault_env, secret_name):
             f"{vault_url}/v1/apps/data/{vault_env}/nr-data-solutions/nr-data-analytics-platform/{secret_name}",
             headers={"X-Vault-Token": vault_token}
         ).json()
+
+        secret_json = secret_json['data']['data']
         
         return secret_json
 
@@ -51,13 +53,10 @@ def main(broker_url, broker_jwt, vault_url, vault_env, secret_name):
 if __name__ == "__main__":
     # Fetch environment variables
     broker_url = os.environ.get("BROKER_URL")
-    # broker_jwt = os.environ.get("BROKER_JWT")
-    broker_jwt= 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOiJiN2ZlNTNmNS03ZjcwLTQxZTktYjQ1Mi1jN2QwNGZmNjk2NGEiLCJleHAiOjE3MTQ5MzUwNzAsImlhdCI6MTcwNzE1OTA3MCwibmJmIjoxNzA3MTU5MDcwLCJqdGkiOiJhNGZhOTRmZi00NmIyLTQ3MGMtODQwOC01Y2QzNDA5ZTBhN2EiLCJzdWIiOiJucm0uZGF0YWZvdW5kYXRpb25zQGdvdi5iYy5jYSJ9.tQPK9qBLJMFpRwRqpTPblHj9KRzKKaqCHX6aQ4clmXI'
+    broker_jwt = os.environ.get("BROKER_JWT")
     vault_url = os.environ.get("VAULT_URL")
-    # vault_env = os.environ.get("VAULT_ENV")
-    vault_env = 'dev'
-    # secret_name = os.environ.get("SECRET_NAME")
-    secret_name = 'ods-dev'
+    vault_env = os.environ.get("VAULT_ENV")
+    secret_name = os.environ.get("SECRET_NAME")
 
     secret_json = main(broker_url, broker_jwt, vault_url, vault_env, secret_name)
 
