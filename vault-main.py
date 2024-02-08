@@ -51,14 +51,19 @@ def main(broker_url, broker_jwt, vault_url, vault_env, secret_name):
 if __name__ == "__main__":
     # Fetch environment variables
     broker_url = os.environ.get("BROKER_URL")
-    broker_jwt = os.environ.get("BROKER_JWT")
+    # broker_jwt = os.environ.get("BROKER_JWT")
+    broker_jwt= 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOiJiN2ZlNTNmNS03ZjcwLTQxZTktYjQ1Mi1jN2QwNGZmNjk2NGEiLCJleHAiOjE3MTQ5MzUwNzAsImlhdCI6MTcwNzE1OTA3MCwibmJmIjoxNzA3MTU5MDcwLCJqdGkiOiJhNGZhOTRmZi00NmIyLTQ3MGMtODQwOC01Y2QzNDA5ZTBhN2EiLCJzdWIiOiJucm0uZGF0YWZvdW5kYXRpb25zQGdvdi5iYy5jYSJ9.tQPK9qBLJMFpRwRqpTPblHj9KRzKKaqCHX6aQ4clmXI'
     vault_url = os.environ.get("VAULT_URL")
-    vault_env = os.environ.get("VAULT_ENV")
-    secret_name = os.environ.get("SECRET_NAME")
+    # vault_env = os.environ.get("VAULT_ENV")
+    vault_env = 'dev'
+    # secret_name = os.environ.get("SECRET_NAME")
+    secret_name = 'ods-dev'
 
     secret_json = main(broker_url, broker_jwt, vault_url, vault_env, secret_name)
 
     if secret_json:
         print(secret_json)
+        with open('/airflow/xcom/return.json', 'w') as f:
+            json.dump(secret_json, f)
     else:
         print("Failed to retrieve secret")
