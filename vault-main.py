@@ -61,7 +61,7 @@ if __name__ == "__main__":
     secret_json = main(broker_url, broker_jwt, vault_url, vault_env, secret_name)
 
     if secret_json:
-        print(secret_json)
+        print("Successfully retrieved secret")
         with open('/airflow/xcom/return.json', 'w') as f:
             json.dump(secret_json, f)
     else:
