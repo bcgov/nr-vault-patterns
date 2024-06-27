@@ -1,5 +1,6 @@
-name: 'Vault Pattern for NR DAP'
-description: 'Vault patterns intended for use within the NR Data Analytics Platform (DAP)'
+name: 'Vault Pattern for NRM DAP'
+description: 'Vault patterns intended for use within the NRM Data Analytics Platform (DAP)'
+author: 'Data Foundations'
 runs:
    using: 'docker'
    image: 'Dockerfile'
