@@ -1,8 +1,6 @@
 FROM python
 
-COPY requirements.txt requirements.txt
-
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r requests>=2.31.0
 
 ENV VAULT_URL='https://vault-iit.apps.silver.devops.gov.bc.ca'
 ENV BROKER_URL='https://nr-broker.apps.silver.devops.gov.bc.ca'
